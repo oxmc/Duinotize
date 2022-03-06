@@ -52,6 +52,11 @@ Now, whenever that page is opened, the miner will start and output messages to t
 
 I HIGHLY reccomend you put a note somewhere on your website to tell visiters that there is a crypto miner running in the background (in some places it is illegal to mine crypto in the background without consent!), and optionally credit this repo.
 
+## Troubleshooting
+- The script isn't running for some users!
+- - That user could have some browser extension which blocks service workers --> Get them to disable the entension on your site 
+- - Their browser blocks external javascript files from being run -> Copy this repo as a folder to your site root and point the script URL to that file (eg. `<script src="scripts/duinotize/duinotize.js" defer></script>`)
+    
 ## How it works
 The program runs a wrapper, which parses the input and runs a worker that connects to the Duco server via a websocket, requests a mining job with the configured settings and solves it using either [DUCO-S1](https://github.com/mobilegmYT/Duinotize/blob/main/hashes.js) or [hash-wasm](https://github.com/Daninet/hash-wasm).The miner sends the result, the time it took, username and hashrate to the server which loads it onto your wallet.
 
