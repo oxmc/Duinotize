@@ -67,12 +67,11 @@
                   rigid: "Duinotize-Demo",
                   threads: 1,
                   difficult: "LOW",
-                  hasher: "DUCO-S1",
-                  onstart: "updatebutton()"
+                  hasher: "DUCO-S1"
                 };
 
                 if (buttonClicked === false) {
-                  var duino = Duinotize(duinoopts);
+                  var duino = Duinotize(duinoopts, updatebutton());
                 };
               };
             </script>
