@@ -8,6 +8,17 @@ Include the main script in your head element:
 ```html
 <script src="https://mobilegmyt.github.io/Duinotize/duinotize.js" defer></script>
 ```
+
+Next make a script element add pass it an options object:
+```html
+<script>
+  Duinotize({
+    username: "rpinews",
+    rigid: "GameSite"
+  });
+</script>
+```
+
 Make sure to replace `rpinews` with your username and `rigid` with the name you want miners to show up as in the web wallet.
 
 <details><summary>Optional configs</summary>
@@ -19,13 +30,15 @@ These are configurations you can change if you wish, but the script will run fin
 For example, a custom config might look like this:
 ```html
 <script src="https://mobilegmyt.github.io/Duinotize/duinotize.js" defer></script>
-<script>Duinotize({
-  username: "rpinews",
-  rigid: "GameSite",
-  difficulty: "LOW",
-  threads: 2,
-  hasher: "hashwasm"
-});</script>
+<script>
+  Duinotize({
+    username: "rpinews",
+    rigid: "GameSite",
+    difficulty: "LOW",
+    threads: 2,
+    hasher: "hashwasm"
+  });
+</script>
 ```
 </details>
 
