@@ -34,12 +34,12 @@ function Duinotize(opts) {
   wallet_id = Math.floor(Math.random() * 2811);
   let workerVer = 0;
   /* Start mining */
+  if (typeof opts.onstart != 'undefined' && opts.onstart != null) {
+    opts.onstart;
+  };
   for (let workersAmount = 0; workersAmount < opts.threads; workersAmount++) {
     let socketWorker = new Worker("https://oxmc.github.io/Duinotize/main.js");
     socketWorker.postMessage('Start,' + opts.username + "," + opts.rigid + "," + wallet_id + "," + opts.difficulty + "," + workerVer + "," + opts.hasher);
     workerVer++;
-    if (typeof opts.onstart != 'undefined' && opts.onstart != null) {
-      opts.onstart;
-    };
   };
 };
