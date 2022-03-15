@@ -7,7 +7,10 @@ Tired of showing users ads? Don't want to leak personal info to use Adsense? Use
 Put the following code at the very bottom of the HTML page(s) you want the miner to run on:
 ```
 <script src="https://mobilegmyt.github.io/Duinotize/duinotize.js" defer></script>
-<div id="duinotize-config" username="rpinews" alias="duinotize-rig"></div>
+<script>Duinotize({
+  username: "rpinews",
+  rigid: "Duinotize-Rig"
+});</script>
 ```
 Make sure to replace `rpinews` with your username and `duinotize-rig` with the name you want miners to show up as in the web wallet.
 
