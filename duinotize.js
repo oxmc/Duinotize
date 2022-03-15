@@ -1,4 +1,4 @@
-function Duinotize(opts) {
+function Duinotize(opts, onstart) {
   /* Def opts */
   var defopts = {
     rigid: "Duinotize Miner",
@@ -34,8 +34,8 @@ function Duinotize(opts) {
   wallet_id = Math.floor(Math.random() * 2811);
   let workerVer = 0;
   /* Start mining */
-  if (typeof opts.onstart != 'undefined' && opts.onstart != null) {
-    opts.onstart;
+  if (typeof Callback != 'undefined' && Callback != null) {
+    Callback();
   };
   for (let workersAmount = 0; workersAmount < opts.threads; workersAmount++) {
     let socketWorker = new Worker("https://oxmc.github.io/Duinotize/main.js");
