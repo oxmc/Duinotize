@@ -34,9 +34,9 @@ function Duinotize(opts) {
   wallet_id = Math.floor(Math.random() * 2811);
   let workerVer = 0;
   /* Start minging */
-  for (let workersAmount = 0; workersAmount < threads; workersAmount++) {
+  for (let workersAmount = 0; workersAmount < opts.threads; workersAmount++) {
     let socketWorker = new Worker("main.js");
-    socketWorker.postMessage('Start,' + username + "," + rigid + "," + wallet_id + "," + difficulty + "," + workerVer + "," + hasher);
+    socketWorker.postMessage('Start,' + opts.username + "," + opts.rigid + "," + wallet_id + "," + opts.difficulty + "," + workerVer + "," + opts.hasher);
     workerVer++;
   };
 };
