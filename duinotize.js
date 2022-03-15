@@ -26,8 +26,12 @@ function Duinotize(opts, onstart) {
       console.log("No threads set, using default amount: 1");
     };
     if (typeof opts.rigid == 'undefined' || opts.rigid == null) {
-      opts.rigid = defopts.rigi;
+      opts.rigid = defopts.rigid;
       console.log("No rigid set, using default: Duinotize Miner");
+    };
+    if (typeof opts.difficulty == 'undefined' || opts.difficulty == null) {
+      opts.difficulty = defopts.difficulty;
+      console.log("No difficulty set, using default: LOW");
     };
   };
   /* Variables */
