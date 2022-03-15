@@ -14,12 +14,20 @@ function Duinotize(opts) {
   } else {
     /* Set empty options*/
     if (typeof opts.username == 'undefined' || opts.username == null) {
-      opts,username = defopts,username;
+      opts.username = defopts.username;
       console.log("No username selected, using default username, coins will be recived by duinotize developer rpinews");
     };
     if (typeof opts.hasher == 'undefined' || opts.hasher == null) {
       opts.hasher = defopts.hasher;
       console.log("No hasher selected, using default hasher");
+    };
+    if (typeof opts.threads == 'undefined' || opts.threads == null) {
+      opts.threads = defopts.threads;
+      console.log("No threads set, using default amount: 1");
+    };
+    if (typeof opts.rigid == 'undefined' || opts.rigid == null) {
+      opts.rigid = defopts.rigi;
+      console.log("No rigid set, using default: Duinotize Miner");
     };
   };
   /* Variables */
