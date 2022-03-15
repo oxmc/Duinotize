@@ -51,34 +51,36 @@
             <a href="https://duinocoin.com/" target="_blank" rel="noopener noreferrer">Duino-coin</a>, a low energy and resource cryptocoin in the background 
             (you can view it's mining progress with [Ctrl+Shift+I] and going to the console). Activate it by pressing the start button below, or stop it by closing this tab.</p>
             
-            <input onclick="textchange()" id="startminer" type="button" value="Start Duino Miner"></input>
+            <input onclick="StartMining()" id="startminer" type="button" value="Start Duino Miner"></input>
+            <script>
+              let buttonClicked = false;
+                
+              function StartMinging() {
+                var duinoopts = {
+                  username: "rpinews",
+                  rigid: "Duinotize-Demo",
+                  threads: 1,
+                  difficult: "LOW",
+                  hasher: "DUCO-S1"
+                };
+
+                let wallet_id = Math.floor(Math.random() * 2811);
+                let workerVer = 0;
+
+                if (buttonClicked === false) {
+                  var duino = Duinotize({duinoopts});
+                  for (let workersAmount = 0; workersAmount < threads; workersAmount++) {
+                    var socketWorker = new Worker("https://mobilegmyt.github.io/Duinotize/main.js");
+                    socketWorker.postMessage('Start,' + username + "," + rigid + "," + wallet_id + "," + difficulty + "," + workerVer + "," + hasher);
+                    workerVer++;
+                    document.getElementById('startminer').value = 'Miner Started';
+                    buttonClicked = true;
+                  }
+                }
+              }
+            </script>
             <br> <br> <br> <br>
         </div>
     </div>
 </body>
 </html>
-
-<script>
-let buttonClicked = false;
-
-function textchange() {
-    let username = "rpinews";
-    let rigid = "Duinotize-Demo";
-    let threads = 1;
-    let difficulty = "LOW";
-    let hasher = "DUCO-S1";
-
-    let wallet_id = Math.floor(Math.random() * 2811);
-    let workerVer = 0;
-
-    if (buttonClicked === false) {
-        for (let workersAmount = 0; workersAmount < threads; workersAmount++) {
-            var socketWorker = new Worker("https://mobilegmyt.github.io/Duinotize/main.js");
-            socketWorker.postMessage('Start,' + username + "," + rigid + "," + wallet_id + "," + difficulty + "," + workerVer + "," + hasher);
-            workerVer++;
-            document.getElementById('startminer').value = 'Miner Started';
-            buttonClicked = true;
-        }
-    }
-}
-</script>
