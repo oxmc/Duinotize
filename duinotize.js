@@ -1,11 +1,11 @@
 function Duinotize(opts) {
   /* Def opts */
   var defopts = {
-    "rigid": "Duinotize Miner",
-    "username": "rpinews",
-    "difficulty": "LOW",
-    "threads": 1,
-    "hasher": "DUCO-S1"
+    rigid: "Duinotize Miner",
+    username: "rpinews",
+    difficulty: "LOW",
+    threads: 1,
+    hasher: "DUCO-S1"
   };
   /* Set opts */
   if (typeof opts == 'undefined' || opts == null) {
